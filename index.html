@@ -37,22 +37,26 @@
 </head>
 <body>
     <div class="container">
-        <h1>🦖 Opening Dino Dodge...</h1>
-        <p>Redirecting you to the game...</p>
-        <p id="status">If the app doesn't open automatically, tap the button below:</p>
-        <a href="dinododge://open?scene=intro" class="button">Open Game</a>
-        <br><br>
-        <a href="https://play.google.com/store/apps/details?id=com.BitForge.DinoDodge" class="button" style="background: #2196F3;">Download from Play Store</a>
+        <h1>🦖 Dino Dodge!</h1>
+        <p id="status">Click the button below to play</p>
+        <a href="#" class="button" id="playButton">Play Now</a>
     </div>
 
     <script>
-        // Attempt to open the app immediately
-        window.location.href = 'dinododge://open?scene=intro';
+        const playButton = document.getElementById('playButton');
+        const statusText = document.getElementById('status');
         
-        // After 2 seconds, show alternative options
-        setTimeout(function() {
-            document.getElementById('status').innerHTML = 'App not installed?';
-        }, 2000);
+        playButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Attempt to open the app
+            window.location.href = 'dinododge://open?scene=intro';
+            
+            // After 1.5 seconds, redirect to Play Store if app didn't open
+            setTimeout(function() {
+                window.location.href = 'https://play.google.com/store/';
+            }, 1500);
+        });
     </script>
 </body>
 </html>
