@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Dino Dodge...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦖 Opening Dino Dodge...</h1>
+        <p>Redirecting you to the game...</p>
+        <p id="status">If the app doesn't open automatically, tap the button below:</p>
+        <a href="dinododge://open?scene=intro" class="button">Open Game</a>
+        <br><br>
+        <a href="https://play.google.com/store/apps/details?id=com.BitForge.DinoDodge" class="button" style="background: #2196F3;">Download from Play Store</a>
+    </div>
+
+    <script>
+        // Attempt to open the app immediately
+        window.location.href = 'dinododge://open?scene=intro';
+        
+        // After 2 seconds, show alternative options
+        setTimeout(function() {
+            document.getElementById('status').innerHTML = 'App not installed?';
+        }, 2000);
+    </script>
+</body>
+</html>
