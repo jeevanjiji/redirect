@@ -48,10 +48,21 @@
         playButton.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Open directly to Sunny Land scene
             window.location.href = 'dinododge://open?scene=Day';
-
-            // Increased timeout to 5 seconds
+            //usable scene names:
+//Main Menu
+//Selection  
+//Sunny Land
+//Day          
+//Jungle
+//Grass Land
+//Mist Forest
+//Dark Forest
+//Rocky Beach
+//Rocky Island
+// Lost City
+// Treasure Hoard
+            
             setTimeout(function() {
                 window.location.href = 'https://play.google.com/store/';
             }, 5000);
