@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opening Dino Dodge...</title>
+    <title>Open App/Game</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,8 +37,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🦖 Dino Dodge!</h1>
-        <p id="status">Click the button below to play</p>
+        <p id="status">Click the button below to open - App/Game</p>
         <a href="#" class="button" id="playButton">Play Now</a>
     </div>
 
@@ -49,10 +48,13 @@
         playButton.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Attempt to open the app
-            window.location.href = 'dinododge://open?scene=intro';
+            window.location.href = 'dinododge://open?scene=Main Menu';
+//redirect to specific scene (usable scenes from dino dodge)
+// dinododge://open?scene=Main Menu
+// dinododge://open?scene=Jungle
+// dinododge://open?scene=Dark Forest
+// dinododge://open?scene=Treasure Hoard
             
-            // After 1.5 seconds, redirect to Play Store if app didn't open
             setTimeout(function() {
                 window.location.href = 'https://play.google.com/store/';
             }, 1500);
