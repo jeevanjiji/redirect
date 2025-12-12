@@ -45,6 +45,10 @@
         const playButton = document.getElementById('playButton');
         const statusText = document.getElementById('status');
         
+        // Detect platform
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isAndroid = /Android/.test(navigator.userAgent);
+        
         playButton.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -64,7 +68,16 @@
 // Treasure Hoard
             
             setTimeout(function() {
-                window.location.href = 'https://play.google.com/store/';
+                if (isIOS) {
+                    // Redirect to App Store (replace YOUR_APP_ID with actual ID)
+                    window.location.href = 'https://apps.apple.com/app/idYOUR_APP_ID';
+                } else if (isAndroid) {
+                    // Redirect to Play Store
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.BitForge.DinoDodge';
+                } else {
+                    // Fallback for other platforms
+                    window.location.href = 'https://play.google.com/store/';
+                }
             }, 5000);
         });
     </script>
